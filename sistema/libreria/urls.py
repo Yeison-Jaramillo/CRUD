@@ -12,4 +12,7 @@ urlpatterns = [
     path("libros/editar", views.editar, name="editar"),
     path("eliminar/<int:id>", views.eliminar, name="eliminar"),
     path("libros/editar/<int:id>", views.editar, name="editar"),
+    path("iniciar-sesion/", views.LoginPage, name="iniciar-sesion"),
+    path("cerrar-sesion/", views.LogoutPage, name="cerrar-sesion"),
+    path("registro", views.SignupPage, name="registro"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

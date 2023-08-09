@@ -7,11 +7,19 @@
     <p class="lead">Empezar a ingresar libros</p>
     <hr class="my-2" />
 
+    {% if not request.user.is_authenticated %}
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button"
-        >Empezar</a
+      <a class="btn btn-primary btn-lg" href="/iniciar-sesion" role="button"
+        >Iniciar sesión</a
       >
     </p>
+    {% endif %} {% if request.user.is_authenticated %}
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/cerrar-sesion" role="button"
+        >Cerrar sesión</a
+      >
+    </p>
+    {% endif %}
   </div>
 </div>
 {% endblock%}
